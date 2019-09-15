@@ -23,6 +23,18 @@ export default {
       default: 'apple'
     }
   },
+  beforeRouteEnter(to, from, next) {
+    // console.log(to.name)
+    // console.log(from.name)
+    next(vm=>{
+      console.log(vm)
+    })
+  },
+  // beforeRouteLeave(to, from, next) {
+  //   const leave = confirm('您确定离开吗？')
+  //   if(leave) next()
+  //   else next(false)
+  // },
   methods: {
     handleClick (type) {
       // this.router就是在Vue 实例中注册的router 实例对象,下面有很多方法.go === back

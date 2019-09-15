@@ -7,7 +7,12 @@ export default [{
   component: Home,
   props: route => ({
     food: route.query.food
-  })
+  }),
+  // beforeEnter: (to, from, next) => {
+  //   if(from.name === 'about') alert('这来自于about页面！')
+  //   else alert('来自于非about页面!')
+  //   next()
+  // }
 },
 {
   path: '/login',
@@ -23,6 +28,9 @@ export default [{
   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
   props: {
     food: 'banana'
+  },
+  meta: {
+    title: '关于'
   }
 },
 {
